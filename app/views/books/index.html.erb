@@ -19,8 +19,12 @@
           <tbody>
             <% @books.each do |book| %>
               <tr>
-                <td><%= link_to current_user.name, user_path(current_user) %></td>
-                <td>book showアクション</td>
+                <td></td>
+                <td>
+                  <%= link_to book_path(book.id) do %>
+                  <%= book.title %>
+                <% end %>
+                </td>
                 <td><%= book.body %></td>
               </tr>
               <% end %>
